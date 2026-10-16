@@ -1,0 +1,120 @@
+{
+  "project_title": "FocusFlow - Minimalist Single-User To-Do App",
+  "theme": "Light Theme (Warm Sand / Swiss Minimalist)",
+  "archetype": "Soft Utility / Organic Precision",
+  "design_principles": {
+    "fusion": "Swiss Poster Typography + Japanese Minimalist Warmth + Modern SaaS Tactile Precision",
+    "emotion": "Clarity, calm control, focus, frictionless productivity without clutter",
+    "whitespace": "Generous 2x-3x padding, high breathing room between list items and sidebar sections",
+    "one_accent_color": "Indigo Accent (#4F46E5 / hsl(243, 75%, 59%)) used exclusively for primary CTAs, active view indicator, and key focus states"
+  },
+  "typography": {
+    "font_family_heading": "Plus Jakarta Sans / Outfit / System Sans (-apple-system, BlinkMacSystemFont, Segoe UI)",
+    "font_family_body": "Inter / system-ui, sans-serif",
+    "font_family_mono": "JetBrains Mono / Source Code Pro, monospace",
+    "rules": {
+      "headings": "font-semibold tracking-tight text-stone-900 dark:text-stone-100",
+      "body": "font-normal leading-relaxed text-stone-700 dark:text-stone-300",
+      "labels": "text-xs font-medium uppercase tracking-wider text-stone-500",
+      "overdue_chip": "text-xs font-semibold text-rose-700 bg-rose-50 border border-rose-200 rounded-full px-2.5 py-0.5",
+      "priority_low": "text-xs font-medium text-slate-600 bg-slate-100 border border-slate-200 rounded-md px-2 py-0.5",
+      "priority_medium": "text-xs font-medium text-amber-700 bg-amber-50 border border-amber-200 rounded-md px-2 py-0.5",
+      "priority_high": "text-xs font-medium text-rose-700 bg-rose-50 border border-rose-200 rounded-md px-2 py-0.5"
+    }
+  },
+  "colors": {
+    "background_primary": "#FAF9F6",
+    "background_secondary": "#F3F1EC",
+    "card_background": "#FFFFFF",
+    "border_color": "#E5E2DC",
+    "text_primary": "#1C1917",
+    "text_muted": "#78716C",
+    "accent": {
+      "main": "#4F46E5",
+      "hover": "#4338CA",
+      "light": "#EEF2FF",
+      "text": "#ffffff"
+    },
+    "status": {
+      "overdue_bg": "#FEF2F2",
+      "overdue_text": "#991B1B",
+      "overdue_border": "#FCA5A5",
+      "today_bg": "#EFF6FF",
+      "today_text": "#1E40AF",
+      "done_text": "#A8A29E"
+    }
+  },
+  "layout_architecture": {
+    "sidebar": {
+      "desktop_width": "w-64 lg:w-72",
+      "mobile_drawer": "Sheet component with left slide-out on screen < 768px",
+      "sections": [
+        "Brand Logo & Title ('FocusFlow')",
+        "Smart Views: All Tasks, Today, Overdue (with live counts)",
+        "Lists Section: Undeletable 'Inbox' + User Custom Lists (with counts & hover actions for rename/delete)",
+        "New List Creator Button/Input"
+      ]
+    },
+    "main_content": {
+      "max_width": "max-w-4xl mx-auto px-4 sm:px-8 py-6 md:py-10",
+      "header_row": "View Title + Progress Text ('X of Y done') + 'Clear Completed' button",
+      "quick_add_bar": "Prominent sticky or top quick-add input with Enter key submit + inline popovers for due date, priority picker, and list selector",
+      "filter_and_sort_bar": "Search bar input, Status filter tabs (All / Active / Done), Sort dropdown (Due Date, Priority, Newest)",
+      "task_list": "Clean vertical stack with generous spacing (space-y-2.5), subtle hover elevate, interactive check animation, click-to-edit side drawer or modal"
+    },
+    "edit_panel": {
+      "type": "Sheet / Drawer or Side Panel sliding from right",
+      "fields": ["Title (editable inline/textarea)", "Notes (rich auto-expanding textarea)", "List Picker dropdown", "Priority Selector (Low, Medium, High)", "Due Date Picker (Calendar popover)"]
+    }
+  },
+  "motion_and_interactions": {
+    "task_completion": "Smooth opacity transition + strike-through text effect",
+    "quick_add_submit": "Micro pulse & instant insertion at the top of the list",
+    "undo_toast": "Sonner toast with 5s countdown bar and instant 'Undo' action handler",
+    "delete_list_modal": "Confirmation dialog ('Are you sure? Tasks in this list will be unassigned/deleted')",
+    "empty_states": "Contextual friendly vector/icon graphics + encouraging text per filter/view"
+  },
+  "data_testid_conventions": {
+    "sidebar_all": "sidebar-smart-all",
+    "sidebar_today": "sidebar-smart-today",
+    "sidebar_overdue": "sidebar-smart-overdue",
+    "sidebar_inbox": "sidebar-list-inbox",
+    "sidebar_user_list": "sidebar-list-{list_id}",
+    "create_list_input": "create-list-input",
+    "create_list_button": "create-list-button",
+    "quick_add_input": "quick-add-task-input",
+    "quick_add_submit": "quick-add-task-submit",
+    "quick_add_priority": "quick-add-priority-select",
+    "quick_add_duedate": "quick-add-duedate-picker",
+    "quick_add_list": "quick-add-list-select",
+    "task_row": "task-row-{task_id}",
+    "task_checkbox": "task-checkbox-{task_id}",
+    "task_title": "task-title-{task_id}",
+    "task_priority_badge": "task-priority-{task_id}",
+    "task_due_chip": "task-due-{task_id}",
+    "task_edit_button": "task-edit-button-{task_id}",
+    "task_delete_button": "task-delete-button-{task_id}",
+    "edit_panel": "task-edit-panel",
+    "edit_title_input": "edit-task-title",
+    "edit_notes_input": "edit-task-notes",
+    "edit_priority_select": "edit-task-priority",
+    "edit_duedate_picker": "edit-task-duedate",
+    "edit_list_select": "edit-task-list",
+    "search_input": "task-search-input",
+    "status_filter_all": "status-filter-all",
+    "status_filter_active": "status-filter-active",
+    "status_filter_done": "status-filter-done",
+    "sort_dropdown": "task-sort-dropdown",
+    "progress_text": "task-progress-text",
+    "clear_completed_button": "clear-completed-button",
+    "undo_toast_button": "undo-delete-toast-button"
+  },
+  "instructions_to_main_agent": [
+    "Build backend FastAPI routes in /app/backend/app/main.py or app/routers: GET/POST/PUT/DELETE for lists and tasks, with search/filter/sort logic and undo temporary cache or restoration endpoint.",
+    "Default list 'Inbox' must be automatically initialized or ensured in DB and marked is_default=True so it cannot be deleted.",
+    "Use Lucide React icons for UI (CheckCircle2, Circle, Calendar, Flag, Trash2, Edit3, Plus, Search, Filter, Inbox, List, AlertCircle, Sparkles, FolderPlus, Menu).",
+    "Ensure responsive support down to 390px mobile view with a mobile header hamburger trigger for the sidebar Sheet drawer.",
+    "Use Sonner toast component (/app/frontend/src/components/ui/sonner.jsx) for the 5-second Undo task deletion toast.",
+    "Add data-testid attributes to all interactive components as specified in data_testid_conventions."
+  ]
+}
